@@ -41,6 +41,12 @@
 <section class="icons">
     <div class="container">
         <div class="content">
+        {{ if .Site.Params.stackoverflow }}
+            <a href="{{ .Site.Params.stackoverflow }}" target="_blank" rel="noopener"><img class="icon" src="/img/stack-overflow.svg" alt="stackoverflow" /></a>          
+        {{ end }}  
+        {{ if .Site.Params.spotify }}
+            <a href="{{ .Site.Params.spotify }}" target="_blank" rel="noopener"><img class="icon" src="/img/spotify.svg" alt="spotify" /></a>
+        {{ end }}  
         {{ if .Site.Params.github }}
             <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener"><img class="icon" src="/img/github.svg" alt="github" /></a>
         {{ end }}
