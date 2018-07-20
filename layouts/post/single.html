@@ -21,13 +21,31 @@
             </div>
             <div class="markdown">
                 {{ .Content }}
-                <br>
+     
                 {{ if .Params.tags }}
                   <div class="tags">
                     <strong>Tags:</strong>
+                    <ul>
                   {{range .Params.tags}}
-                    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                    <li>
+                      <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                    </li>  
                   {{end}}
+                  </ul>
+                  </div>
+                  
+                {{end}}
+                <br>
+                {{ if .Params.categories }}
+                  <div class="tags">
+                    <strong>Categories:</strong>
+                    <ul>
+                  {{range .Params.categories}}
+                    <li>
+                      <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                    </li>
+                  {{end}}
+                  </ul>
                   </div>
                   <br />
                 {{end}}
